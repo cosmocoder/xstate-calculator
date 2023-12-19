@@ -1,6 +1,6 @@
-import type { CalcData } from '../types';
+import type { CalcData } from '../../types';
 
-interface DisplayProps {
+export interface DisplayProps {
   currentCalc: CalcData;
 }
 
@@ -18,8 +18,7 @@ export const Display = ({ currentCalc }: DisplayProps) => {
 
   const numLength = numToDisplay.toString().length;
 
-  const style =
-    numLength > 7 ? { fontSize: calculateFontSize(numLength) } : undefined;
+  const style = numLength > 7 ? { fontSize: calculateFontSize(numLength) } : undefined;
 
   return (
     <div style={style} className="display">

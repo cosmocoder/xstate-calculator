@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Display > should render correctly in default state 1`] = `
+<div>
+  <div
+    class="display"
+  >
+    0
+  </div>
+</div>
+`;

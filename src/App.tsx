@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 import { Buttons } from './components/Buttons/Buttons';
-import { Display } from './components/Display';
+import { Display } from './components/Display/Display';
 import type { ButtonData, MainOperations, OtherOperations } from './types';
 import { useMachine } from '@xstate/react';
 import { machine } from './machine';
@@ -31,12 +31,7 @@ export const App = () => {
 
   const buttonData: ButtonData = {
     operation: snapshot.context.operation,
-    clearOption:
-      snapshot.context.currentNum ||
-      snapshot.context.previousNum ||
-      snapshot.context.result
-        ? 'C'
-        : 'AC',
+    clearOption: snapshot.context.currentNum || snapshot.context.previousNum || snapshot.context.result ? 'C' : 'AC',
   };
 
   return (
