@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import type { MouseEvent } from 'react';
-import type { ButtonData } from '../types';
+import type { ButtonData } from '../../types';
 
 interface ButtonProps {
   handleClick: (e: MouseEvent<HTMLButtonElement>) => void;

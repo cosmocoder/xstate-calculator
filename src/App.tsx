@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import { Buttons } from './components/Buttons';
+import { Buttons } from './components/Buttons/Buttons';
 import { Display } from './components/Display';
 import type { ButtonData, MainOperations, OtherOperations } from './types';
 import { useMachine } from '@xstate/react';
