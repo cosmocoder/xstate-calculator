@@ -15,7 +15,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'testing-library', 'vitest'],
   settings: {
     react: {
       version: 'detect',
@@ -33,6 +33,10 @@ module.exports = {
       parserOptions: {
         sourceType: 'script',
       },
+    },
+    {
+      files: ['*.test.tsx', '*.test.ts'],
+      extends: ['plugin:testing-library/react', 'plugin:vitest:recommended'],
     },
   ],
 };
