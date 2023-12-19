@@ -14,7 +14,8 @@ const calculateFontSize = (numLength: number) => {
 export const Display = ({ currentCalc }: DisplayProps) => {
   const { previousNum, currentNum, result } = currentCalc;
 
-  const numToDisplay = result || currentNum || previousNum || '0';
+  let numToDisplay = result || currentNum || previousNum || '0';
+  numToDisplay = Number(numToDisplay).toLocaleString();
 
   const numLength = numToDisplay.toString().length;
 

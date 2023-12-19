@@ -35,4 +35,10 @@ describe('Display', () => {
 
     expect(await screen.findByText('5')).toBeInTheDocument();
   });
+
+  it('should format large numbers with commas', async () => {
+    render(<Display currentCalc={{ ...defaultProps.currentCalc, currentNum: '100000' }} />);
+
+    expect(await screen.findByText('100,000')).toBeInTheDocument();
+  });
 });
