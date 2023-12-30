@@ -15,14 +15,21 @@ export const Display = ({ currentCalc }: DisplayProps) => {
   const { previousNum, currentNum, result } = currentCalc;
 
   let numToDisplay = result || currentNum || previousNum || '0';
-  numToDisplay = Number(numToDisplay).toLocaleString();
+
+  if (numToDisplay.includes('.')) {
+    const [firstPart, secondPart] = numToDisplay.split('.');
+
+    numToDisplay = Number(firstPart).toLocaleString() + '.' + secondPart;
+  } else {
+    numToDisplay = Number(numToDisplay).toLocaleString();
+  }
 
   const numLength = numToDisplay.toString().length;
 
   const style = numLength > 7 ? { fontSize: calculateFontSize(numLength) } : undefined;
 
   return (
-    <div style={style} className="display">
+    <div style={style} aria-live="polite" role="region" className="display">
       {numToDisplay}
     </div>
   );

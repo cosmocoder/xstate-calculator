@@ -3,7 +3,9 @@
 exports[`Display > should render correctly in default state 1`] = `
 <div>
   <div
+    aria-live="polite"
     class="display"
+    role="region"
   >
     0
   </div>

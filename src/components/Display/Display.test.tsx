@@ -36,9 +36,15 @@ describe('Display', () => {
     expect(await screen.findByText('5')).toBeInTheDocument();
   });
 
-  it('should format large numbers with commas', async () => {
+  it('should format large numbers with commas when there is no decimal point', async () => {
     render(<Display currentCalc={{ ...defaultProps.currentCalc, currentNum: '100000' }} />);
 
     expect(await screen.findByText('100,000')).toBeInTheDocument();
+  });
+
+  it('should format large numbers with commas when there is decimal point', async () => {
+    render(<Display currentCalc={{ ...defaultProps.currentCalc, currentNum: '1000.01' }} />);
+
+    expect(await screen.findByText('1,000.01')).toBeInTheDocument();
   });
 });
