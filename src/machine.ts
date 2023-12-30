@@ -11,12 +11,9 @@ export const machine = setup({
       | { type: 'other'; payload: OtherOperations };
   },
   guards: {
-    isClearingInput: ({ event }) =>
-      event.type === 'other' && event.payload === 'clear',
+    isClearingInput: ({ event }) => event.type === 'other' && event.payload === 'clear',
     isCalculatingResult: ({ event, context }) => {
-      return event.payload === '=' && context.previousNum && context.currentNum
-        ? true
-        : false;
+      return event.payload === '=' && context.previousNum && context.currentNum ? true : false;
     },
   },
   actions: {
@@ -39,7 +36,7 @@ export const machine = setup({
       if (event.payload === '%') {
         return {
           ...context,
-          result: (Number(context.currentNum) / 100).toString(),
+          currentNum: (Number(context.currentNum) / 100).toString(),
         };
       }
 
@@ -75,14 +72,13 @@ export const machine = setup({
       on: {
         number: {
           actions: assign({
-            currentNum: ({ event, context }) =>
-              context.currentNum + event.payload,
+            currentNum: ({ event, context }) => context.currentNum + event.payload,
           }),
           target: 'editingFirstNumber',
         },
         operation: {
           actions: assign(({ event, context }) => ({
-            previousNum: context.currentNum,
+            previousNum: context.currentNum || context.previousNum,
             currentNum: '',
             operation: event.payload,
           })),
@@ -98,6 +94,7 @@ export const machine = setup({
               ...context,
               previousNum: '',
               currentNum: '',
+              result: '',
             })),
           },
           {
@@ -144,8 +141,7 @@ export const machine = setup({
       on: {
         number: {
           actions: assign({
-            currentNum: ({ event, context }) =>
-              context.currentNum + event.payload,
+            currentNum: ({ event, context }) => context.currentNum + event.payload,
           }),
           target: 'editingSecondNumber',
         },
@@ -153,7 +149,7 @@ export const machine = setup({
           actions: assign(({ event, context }) => {
             const result = calculateResult(context);
             return {
-              previousNum: result,
+              previousNum: result || '',
               currentNum: '',
               result: '',
               operation: event.payload,
@@ -205,7 +201,9 @@ export const machine = setup({
         number: {
           actions: assign(({ context, event }) => ({
             ...context,
+            previousNum: '',
             currentNum: event.payload,
+            result: '',
           })),
           target: 'editingFirstNumber',
         },
@@ -232,9 +230,9 @@ export const machine = setup({
             })),
           },
           {
-            target: 'editingSecondNumber',
+            target: 'editingFirstNumber',
             actions: enqueueActions(({ enqueue, context, event }) => {
-              enqueue.assign({ currentNum: context.result, result: '' });
+              enqueue.assign({ previousNum: '', currentNum: context.result, result: '' });
               enqueue.raise({ type: 'other', payload: event.payload });
             }),
           },
