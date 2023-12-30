@@ -1,0 +1,154 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Calculator app > should render correctly 1`] = `
+<div>
+  <div
+    class="calculator-container"
+  >
+    <div
+      aria-live="polite"
+      class="display"
+      role="region"
+    >
+      0
+    </div>
+    <div
+      class="buttons-container"
+    >
+      <button
+        class="number-button zero "
+        data-number="0"
+        type="button"
+      >
+        0
+      </button>
+      <button
+        class="number-button one "
+        data-number="1"
+        type="button"
+      >
+        1
+      </button>
+      <button
+        class="number-button two "
+        data-number="2"
+        type="button"
+      >
+        2
+      </button>
+      <button
+        class="number-button three "
+        data-number="3"
+        type="button"
+      >
+        3
+      </button>
+      <button
+        class="number-button four "
+        data-number="4"
+        type="button"
+      >
+        4
+      </button>
+      <button
+        class="number-button five "
+        data-number="5"
+        type="button"
+      >
+        5
+      </button>
+      <button
+        class="number-button six "
+        data-number="6"
+        type="button"
+      >
+        6
+      </button>
+      <button
+        class="number-button seven "
+        data-number="7"
+        type="button"
+      >
+        7
+      </button>
+      <button
+        class="number-button eight "
+        data-number="8"
+        type="button"
+      >
+        8
+      </button>
+      <button
+        class="number-button nine "
+        data-number="9"
+        type="button"
+      >
+        9
+      </button>
+      <button
+        class="operation-button plus "
+        data-operation="+"
+        type="button"
+      >
+        +
+      </button>
+      <button
+        class="operation-button minus "
+        data-operation="-"
+        type="button"
+      >
+        -
+      </button>
+      <button
+        class="operation-button times "
+        data-operation="x"
+        type="button"
+      >
+        x
+      </button>
+      <button
+        class="operation-button divide "
+        data-operation="÷"
+        type="button"
+      >
+        ÷
+      </button>
+      <button
+        class="button equals "
+        data-other="="
+        type="button"
+      >
+        =
+      </button>
+      <button
+        class="button clear "
+        data-other="clear"
+        type="button"
+      >
+        AC
+      </button>
+      <button
+        class="button decimal "
+        data-other="."
+        type="button"
+      >
+        .
+      </button>
+      <button
+        class="button negative "
+        data-other="+/-"
+        type="button"
+      >
+        +/-
+      </button>
+      <button
+        class="button percent "
+        data-other="%"
+        type="button"
+      >
+        %
+      </button>
+    </div>
+  </div>
+</div>
+`;
