@@ -35,10 +35,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prettier": "prettier --write .",
-    "stylelint": "stylelint **/*.css --fix",
-    "test": "vitest"
+    "prettier:ci": "prettier --check .",
+    "stylelint": "stylelint **/*.css",
+    "stylelint:fix": "stylelint **/*.css --fix",
+    "typeCheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:ci": "vitest run"
   },
   "volta": {
     "node": "20.10.0"
