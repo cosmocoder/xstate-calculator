@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { Display, DisplayProps } from './Display';
+import type { DisplayProps } from './Display';
+import { Display } from './Display';
 
 const defaultProps: DisplayProps = {
   currentCalc: {

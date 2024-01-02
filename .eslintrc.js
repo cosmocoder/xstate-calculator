@@ -36,7 +36,7 @@ module.exports = {
     },
     {
       files: ['*.test.tsx', '*.test.ts'],
-      extends: ['plugin:testing-library/react', 'plugin:vitest:recommended'],
+      extends: ['plugin:testing-library/react', 'plugin:vitest/recommended'],
     },
   ],
 };
