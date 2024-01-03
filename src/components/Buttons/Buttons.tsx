@@ -123,10 +123,7 @@ export const Buttons = ({ handleClick, buttonData }: ButtonProps) => {
           key={nanoid()}
           type="button"
           {...{ [item.dataProp]: item.display }}
-          className={`${item.className} ${checkIfHighlighted(
-            item.display.toString(),
-            buttonData,
-          )}`}
+          className={`${item.className} ${checkIfHighlighted(item.display.toString(), buttonData)}`}
           onClick={handleClick}
         >
           {item.display === 'clear' ? buttonData.clearOption : item.display}

@@ -3,16 +3,11 @@
   "eslint.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "css.validate": false,
   "scss.validate": false,
-  "stylelint.validate": [
-    "css",
-    "scss",
-  ],
-  "cSpell.words": [
-    "xstate"
-  ]
+  "stylelint.validate": ["css", "scss"],
+  "cSpell.words": ["xstate"]
 }

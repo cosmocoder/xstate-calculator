@@ -2,10 +2,7 @@ import type { CalcData } from '../types';
 
 export const calculateResult = (calcData: CalcData) => {
   const firstNum = Number(calcData.result) || Number(calcData.previousNum);
-  let secondNum =
-    Number(calcData.currentNum) ||
-    Number(calcData.previousNum) ||
-    Number(calcData.result);
+  let secondNum = Number(calcData.currentNum) || Number(calcData.previousNum) || Number(calcData.result);
 
   const op = calcData.operation;
 
