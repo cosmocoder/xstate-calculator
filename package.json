@@ -25,7 +25,9 @@
     "eslint-plugin-testing-library": "^6.2.0",
     "eslint-plugin-vitest": "^0.3.18",
     "eslint-plugin-xstate": "^3.2.1",
+    "husky": "^8.0.3",
     "jsdom": "^23.0.1",
+    "lint-staged": "^15.2.0",
     "prettier": "3.1.1",
     "stylelint": "^16.0.2",
     "stylelint-config-standard": "^35.0.0",
@@ -46,9 +48,21 @@
     "stylelint:fix": "stylelint **/*.css --fix",
     "typeCheck": "tsc --noEmit",
     "test": "vitest",
-    "test:ci": "vitest run"
+    "test:ci": "vitest run",
+    "prepare": "husky install"
   },
   "volta": {
     "node": "20.10.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,md,html,css,scss}": [
+      "npm run prettier"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,}": [
+      "npm run lint:fix"
+    ],
+    "src/**/*.{css,scss}": [
+      "npm run stylelint:fix"
+    ]
   }
 }
