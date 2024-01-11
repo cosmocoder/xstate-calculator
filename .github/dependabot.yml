@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      time: '05:30'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'fix'
+      prefix-development: 'chore'
+      include: 'scope'
+    registries:
+      - npm-npmjs
+
+    groups:
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
+
+      vitest:
+        patterns:
+          - 'vitest'
+          - 'jsdom'
+
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      time: '05:30'
+      timezone: 'Europe/Berlin'
+    labels:
+      - 'dependencies'
+      - 'ci'
+    commit-message:
+      prefix: 'chore'
+      prefix-development: 'chore'
+      include: 'scope'
