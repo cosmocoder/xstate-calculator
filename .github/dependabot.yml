@@ -12,8 +12,6 @@ updates:
       prefix: 'fix'
       prefix-development: 'chore'
       include: 'scope'
-    registries:
-      - npm-npmjs
 
     groups:
       react:
