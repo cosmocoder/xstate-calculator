@@ -125,6 +125,7 @@ jobs:
     name: Deploy app to Github pages
     runs-on: ubuntu-latest
     needs: [deps, lint-typeCheck, test, build]
+    if: ${{ github.ref == 'refs/head/main' }}
     permissions:
       pages: write
       id-token: write
