@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "yoavbls.pretty-ts-errors",
+    "clinyong.vscode-css-modules",
+    "github.vscode-github-actions",
+    "redhat.vscode-yaml"
+  ]
+}
