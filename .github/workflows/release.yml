@@ -127,11 +127,7 @@ jobs:
     needs: [deps, lint-typeCheck, test, build]
     if: ${{ github.ref == 'refs/head/main' }}
     permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -142,14 +138,7 @@ jobs:
           path: dist
           key: ${{ env.BUILD_VERSION }}
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
