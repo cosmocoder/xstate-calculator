@@ -2,7 +2,7 @@
   "name": "calculator",
   "dependencies": {
     "@xstate/react": "^4.1.0",
-    "nanoid": "5.0.5",
+    "nanoid": "5.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "xstate": "^5.7.1"
