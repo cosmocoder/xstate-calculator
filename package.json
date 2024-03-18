@@ -8,7 +8,7 @@
     "xstate": "^5.9.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.6.1",
+    "@commitlint/cli": "^19.2.0",
     "@commitlint/config-conventional": "^18.6.2",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
