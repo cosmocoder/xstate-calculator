@@ -34,7 +34,7 @@
     "stylelint-config-standard": "^36.0.1",
     "typescript": "^5.8.2",
     "vite": "6.2.2",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.9"
   },
   "scripts": {
     "start": "vite",
