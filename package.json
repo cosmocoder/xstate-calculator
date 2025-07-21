@@ -30,7 +30,7 @@
     "jsdom": "^26.1.0",
     "lint-staged": "^15.5.1",
     "prettier": "3.4.2",
-    "stylelint": "^16.6.1",
+    "stylelint": "^16.22.0",
     "stylelint-config-standard": "^36.0.1",
     "typescript": "^5.8.3",
     "vite": "6.3.5",
