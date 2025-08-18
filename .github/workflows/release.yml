@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Restore node modules cache
         uses: actions/cache/restore@v4
@@ -58,7 +58,7 @@ jobs:
           - npm run typeCheck
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Restore node modules cache
         uses: actions/cache/restore@v4
@@ -81,7 +81,7 @@ jobs:
         shardTotal: [3]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Restore node modules cache
         uses: actions/cache/restore@v4
@@ -101,7 +101,7 @@ jobs:
     needs: [deps]
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Restore node modules cache
         uses: actions/cache/restore@v4
@@ -135,7 +135,7 @@ jobs:
       id-token: write
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Restore build
         uses: actions/cache/restore/@v4
