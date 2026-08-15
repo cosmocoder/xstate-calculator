@@ -32,7 +32,7 @@ jobs:
           key: ${{ env.NODE_MODULES_CACHE_PREFIX }}-${{ hashFiles('package-lock.json') }}
 
       - name: Setup Volta
-        uses: volta-cli/action@v4
+        uses: volta-cli/action@v5
 
       - name: Install dependencies
         if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
@@ -67,7 +67,7 @@ jobs:
           key: ${{ env.NODE_MODULES_CACHE_PREFIX }}-${{ hashFiles('package-lock.json') }}
 
       - name: Setup Volta
-        uses: volta-cli/action@v4
+        uses: volta-cli/action@v5
 
       - run: ${{ matrix.command }}
 
@@ -90,7 +90,7 @@ jobs:
           key: ${{ env.NODE_MODULES_CACHE_PREFIX }}-${{ hashFiles('package-lock.json') }}
 
       - name: Setup Volta
-        uses: volta-cli/action@v4
+        uses: volta-cli/action@v5
 
       - name: Tests for shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }}
         run: npm run test:ci -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
@@ -110,7 +110,7 @@ jobs:
           key: ${{ env.NODE_MODULES_CACHE_PREFIX }}-${{ hashFiles('package-lock.json') }}
 
       - name: Setup Volta
-        uses: volta-cli/action@v4
+        uses: volta-cli/action@v5
 
       - name: Create build
         run: npm run build
